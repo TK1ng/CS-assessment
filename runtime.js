@@ -1,11 +1,11 @@
 const perf = require('execution-time')();
 
 
-function doublerAppend(nums){
+function doublerAppend(nums) {
 
     let new_nums = [];
 
-    for (let i=0; i<nums.length; i++){
+    for (let i = 0; i < nums.length; i++) {
         let num = nums[i] * 2;
         new_nums.push(num);
     }
@@ -13,11 +13,11 @@ function doublerAppend(nums){
 }
 
 
-function doublerInsert(nums){
+function doublerInsert(nums) {
 
     let new_nums = [];
 
-    for (let i=0; i<nums.length; i++){
+    for (let i = 0; i < nums.length; i++) {
         let num = nums[i] * 2;
         new_nums.unshift(num);
     }
@@ -25,9 +25,9 @@ function doublerInsert(nums){
 }
 
 
-function getSizedArray(size){
+function getSizedArray(size) {
     let array = [];
-    for (let i=0; i<size; i++){
+    for (let i = 0; i < size; i++) {
         array.push(i);
     }
     return array
@@ -47,16 +47,16 @@ const extraLargeArray = getSizedArray(100000);
 
 // Try it with first function
 perf.start();                     // Starts timer
-doublerAppend(extraLargeArray);
+doublerAppend(largeArray);
 let resultsAppend = perf.stop();  // Stops timer and save time results
 
 
 // Try it with second function
 perf.start();
-doublerInsert(extraLargeArray);
+doublerInsert(largeArray);
 let resultsInsert = perf.stop();
 
 
-console.log('Results for the extraLargeArray');
+console.log('Results for the largeArray');
 console.log("insert", resultsInsert.preciseWords);
 console.log("append", resultsAppend.preciseWords);
