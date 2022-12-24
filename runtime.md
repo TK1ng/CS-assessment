@@ -31,7 +31,7 @@
 | largeArray      | 9.044334 ms   | 556.667 μs   |
 | extraLargeArray | 1.071560959 s | 25.417084 ms |
 
-**Observation**
+### **Observation**
 A pattern seen here is that as the input grows, the time to process increases as well. These functions both appear to have a time complexity of O(n). The Append function, however, seems to scale better even though it takes a bit more time handling the smaller inputs when compared to the Insert function. For the largest input, the Insert function takes about 1.07 seconds while the Append function only takes about 25.42 miliseconds. The insert function uses the unshift() method to add values to the beginning of an array. With this method, the computer must re-index each item as it shifts all items to the right to place the new value at the front of the array. The push() method used in the Append function, only has to add the value at the end of the array. This is likely why the Insert function takes more time with larger inputs compared to the Insert function.
 
 **doublerAppend**
